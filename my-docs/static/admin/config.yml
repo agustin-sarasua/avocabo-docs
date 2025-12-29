@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: agustin-sarasua/avocabo-docs
+  branch: main
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "docs"
+    label: "PragmaTeach Documentation"
+    folder: "docs"
+    create: true
+    slug: "{{slug}}"
+    format: "markdown"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
