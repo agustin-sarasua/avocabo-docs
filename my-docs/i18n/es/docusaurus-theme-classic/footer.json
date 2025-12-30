@@ -1,0 +1,50 @@
+{
+  "link.title.Documentation": {
+    "message": "Documentación",
+    "description": "The title of the footer links column with title=Documentation in the footer"
+  },
+  "link.title.Quick Links": {
+    "message": "Enlaces Rápidos",
+    "description": "The title of the footer links column with title=Quick Links in the footer"
+  },
+  "link.title.Platform": {
+    "message": "Plataforma",
+    "description": "The title of the footer links column with title=Platform in the footer"
+  },
+  "link.item.label.Getting Started": {
+    "message": "Comenzar",
+    "description": "The label of footer link with label=Getting Started linking to /docs/intro"
+  },
+  "link.item.label.For Teachers": {
+    "message": "Para Profesores",
+    "description": "The label of footer link with label=For Teachers linking to /docs/category/dashboard-for-teachers"
+  },
+  "link.item.label.For Students": {
+    "message": "Para Estudiantes",
+    "description": "The label of footer link with label=For Students linking to /docs/category/students-app"
+  },
+  "link.item.label.Course Creation": {
+    "message": "Creación de Cursos",
+    "description": "The label of footer link with label=Course Creation linking to /docs/dashboard/courses/creating-courses"
+  },
+  "link.item.label.User Management": {
+    "message": "Gestión de Usuarios",
+    "description": "The label of footer link with label=User Management linking to /docs/dashboard/users/managing-users"
+  },
+  "link.item.label.AI Assistant": {
+    "message": "Asistente de IA",
+    "description": "The label of footer link with label=AI Assistant linking to /docs/dashboard/ai-assistant"
+  },
+  "link.item.label.Teacher Dashboard": {
+    "message": "Panel de Profesores",
+    "description": "The label of footer link with label=Teacher Dashboard linking to https://app.pragmateach.com"
+  },
+  "link.item.label.Student App": {
+    "message": "App de Estudiantes",
+    "description": "The label of footer link with label=Student App linking to https://student.pragmateach.com"
+  },
+  "copyright": {
+    "message": "Copyright © 2025 PragmaTeach. Todos los derechos reservados.",
+    "description": "The footer copyright"
+  }
+}

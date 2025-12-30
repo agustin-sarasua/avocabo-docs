@@ -1,0 +1,38 @@
+{
+  "version.label": {
+    "message": "Siguiente",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Dashboard for Teachers": {
+    "message": "Panel para Profesores",
+    "description": "The label for category 'Dashboard for Teachers' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Dashboard for Teachers.link.generated-index.description": {
+    "message": "Guía completa del Panel de Profesores de PragmaTeach.",
+    "description": "The generated-index page description for category 'Dashboard for Teachers' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Courses": {
+    "message": "Cursos",
+    "description": "The label for category 'Courses' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Courses.link.generated-index.description": {
+    "message": "Aprende cómo crear y gestionar cursos.",
+    "description": "The generated-index page description for category 'Courses' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.User Management": {
+    "message": "Gestión de Usuarios",
+    "description": "The label for category 'User Management' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.User Management.link.generated-index.description": {
+    "message": "Gestiona estudiantes, profesores y grupos.",
+    "description": "The generated-index page description for category 'User Management' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Students App": {
+    "message": "App de Estudiantes",
+    "description": "The label for category 'Students App' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Students App.link.generated-index.description": {
+    "message": "Guía para estudiantes que usan la app de PragmaTeach.",
+    "description": "The generated-index page description for category 'Students App' in sidebar 'tutorialSidebar'"
+  }
+}
