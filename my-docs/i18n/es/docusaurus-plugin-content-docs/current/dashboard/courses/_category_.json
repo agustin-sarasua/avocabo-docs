@@ -1,0 +1,9 @@
+{
+  "label": "Cursos",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Aprende cómo crear, gestionar y optimizar cursos con generación de contenido con IA."
+  }
+}
+

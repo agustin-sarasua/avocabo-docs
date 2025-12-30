@@ -1,30 +1,464 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * PragmaTeach Custom Theme
+ * 
+ * Brand Colors:
+ * - Primary: Indigo (#4338ca)
+ * - Secondary: Rich indigo shades
+ * - Accent: Warm golden yellow
  */
 
-/* You can override the default Infima variables here. */
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Light mode theme */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Primary - Brand Indigo */
+  --ifm-color-primary: #4338ca;
+  --ifm-color-primary-dark: #3730a3;
+  --ifm-color-primary-darker: #312e81;
+  --ifm-color-primary-darkest: #1e1b4b;
+  --ifm-color-primary-light: #6366f1;
+  --ifm-color-primary-lighter: #818cf8;
+  --ifm-color-primary-lightest: #c7d2fe;
+  
+  /* Secondary colors */
+  --ifm-color-secondary: #795548;
+  --ifm-color-accent: #FFC107;
+  
+  /* Typography */
+  --ifm-font-family-base: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-heading-font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-font-size-base: 16px;
+  --ifm-code-font-size: 90%;
+  
+  /* Layout */
+  --ifm-global-radius: 8px;
+  --ifm-navbar-height: 64px;
+  
+  /* Code highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(67, 56, 202, 0.15);
+  
+  /* Link styling */
+  --ifm-link-color: var(--ifm-color-primary-dark);
+  --ifm-link-hover-color: var(--ifm-color-primary-darkest);
+  
+  /* Hero background */
+  --hero-bg-gradient: linear-gradient(135deg, #4338ca 0%, #312e81 50%, #1e1b4b 100%);
+  --hero-pattern-color: rgba(255, 255, 255, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode theme */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+  
+  --ifm-background-color: #1a1a2e;
+  --ifm-background-surface-color: #16213e;
+  
+  --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.2);
+  
+  --hero-bg-gradient: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #3730a3 100%);
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: 'liga', 'kern';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ========================================
+   NAVBAR STYLES
+   ======================================== */
+
+.navbar {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(26, 26, 46, 0.95);
+}
+
+.navbar__title {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+}
+
+.navbar-dashboard-link {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: white !important;
+  padding: 8px 16px !important;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.navbar-dashboard-link:hover {
+  background: linear-gradient(135deg, var(--ifm-color-primary-dark) 0%, var(--ifm-color-primary-darkest) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.3);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+  background: var(--hero-bg-gradient);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, var(--hero-pattern-color) 1px, transparent 1px),
+    radial-gradient(circle at 80% 70%, var(--hero-pattern-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.heroBanner {
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+}
+
+@media screen and (max-width: 996px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .heroBanner {
+    padding: 4rem 2rem;
+  }
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.button {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 600;
+  border-radius: 25px;
+  padding: 12px 28px;
+  transition: all 0.3s ease;
+}
+
+.button--primary {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  border: none;
+}
+
+.button--primary:hover {
+  background: linear-gradient(135deg, var(--ifm-color-primary-dark) 0%, var(--ifm-color-primary-darkest) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(67, 56, 202, 0.35);
+}
+
+.button--secondary {
+  background: white;
+  color: var(--ifm-color-primary-dark);
+  border: 2px solid white;
+}
+
+.button--secondary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ifm-color-primary-darkest);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+}
+
+/* ========================================
+   FEATURE CARDS
+   ======================================== */
+
+.feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(67, 56, 202, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(67, 56, 202, 0.15);
+  border-color: rgba(67, 56, 202, 0.3);
+}
+
+[data-theme='dark'] .feature-card {
+  background: var(--ifm-background-surface-color);
+  border-color: rgba(129, 140, 248, 0.2);
+}
+
+[data-theme='dark'] .feature-card:hover {
+  border-color: rgba(129, 140, 248, 0.4);
+  box-shadow: 0 12px 40px rgba(129, 140, 248, 0.1);
+}
+
+/* ========================================
+   SIDEBAR STYLES
+   ======================================== */
+
+.menu__link {
+  border-radius: var(--ifm-global-radius);
+  transition: all 0.2s ease;
+}
+
+.menu__link--active {
+  background: linear-gradient(90deg, rgba(67, 56, 202, 0.15) 0%, rgba(67, 56, 202, 0.05) 100%);
+  border-left: 3px solid var(--ifm-color-primary);
+}
+
+.menu__list-item-collapsible:hover {
+  background: rgba(67, 56, 202, 0.08);
+}
+
+/* ========================================
+   DOCUMENTATION CONTENT
+   ======================================== */
+
+.markdown {
+  --ifm-h1-font-size: 2.25rem;
+  --ifm-h2-font-size: 1.75rem;
+  --ifm-h3-font-size: 1.35rem;
+}
+
+.markdown h1 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(67, 56, 202, 0.2);
+}
+
+.markdown h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Callouts / Admonitions */
+.alert {
+  border-radius: 12px;
+  border-left-width: 4px;
+}
+
+.alert--info {
+  background: linear-gradient(90deg, rgba(67, 56, 202, 0.1) 0%, rgba(67, 56, 202, 0.02) 100%);
+  border-left-color: var(--ifm-color-primary);
+}
+
+.alert--success {
+  background: linear-gradient(90deg, rgba(67, 56, 202, 0.15) 0%, rgba(67, 56, 202, 0.05) 100%);
+}
+
+.alert--warning {
+  background: linear-gradient(90deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.05) 100%);
+}
+
+.alert--danger {
+  background: linear-gradient(90deg, rgba(244, 67, 54, 0.1) 0%, rgba(244, 67, 54, 0.02) 100%);
+}
+
+/* Tables */
+table {
+  border-radius: var(--ifm-global-radius);
+  overflow: hidden;
+}
+
+table thead tr {
+  background: linear-gradient(90deg, rgba(67, 56, 202, 0.1) 0%, rgba(67, 56, 202, 0.05) 100%);
+}
+
+table tbody tr:nth-child(even) {
+  background: rgba(67, 56, 202, 0.03);
+}
+
+/* Code blocks */
+.prism-code {
+  border-radius: 12px;
+}
+
+/* ========================================
+   FOOTER STYLES
+   ======================================== */
+
+.footer {
+  background: linear-gradient(180deg, #1e1b4b 0%, #0f0a1f 100%);
+}
+
+.footer__title {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.footer__link-item {
+  transition: all 0.2s ease;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary-lighter);
+}
+
+.footer__copyright {
+  opacity: 0.8;
+}
+
+/* ========================================
+   SPECIAL COMPONENTS
+   ======================================== */
+
+/* Icon containers */
+.icon-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Status badges */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badge--success {
+  background: rgba(67, 56, 202, 0.15);
+  color: var(--ifm-color-primary-darkest);
+}
+
+.badge--warning {
+  background: rgba(255, 193, 7, 0.15);
+  color: #8B6914;
+}
+
+.badge--info {
+  background: rgba(33, 150, 243, 0.15);
+  color: #1565C0;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media screen and (max-width: 768px) {
+  .markdown h1 {
+    font-size: 1.75rem;
+  }
+  
+  .markdown h2 {
+    font-size: 1.4rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+  }
+  
+  .button {
+    padding: 10px 20px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .navbar,
+  .footer,
+  .table-of-contents {
+    display: none !important;
+  }
+  
+  .markdown {
+    max-width: 100% !important;
+  }
 }

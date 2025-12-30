@@ -1,23 +1,402 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+/* ========================================
+   HERO SECTION
+   ======================================== */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 6rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.brandName {
+  background: linear-gradient(135deg, #FFFFFF 0%, #A5D6A7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heroButtonOutline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.heroButtonOutline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.heroDecoration {
+  position: absolute;
+  top: 50%;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 4rem 1rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .heroDecoration {
+    display: none;
   }
 }
 
-.buttons {
+/* ========================================
+   SECTION HEADERS
+   ======================================== */
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-bottom: 0.75rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.15rem;
+  color: var(--ifm-color-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   FEATURES SECTION
+   ======================================== */
+
+.features {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #F8FFF8 0%, #FFFFFF 100%);
+}
+
+[data-theme='dark'] .features {
+  background: linear-gradient(180deg, var(--ifm-background-surface-color) 0%, var(--ifm-background-color) 100%);
+}
+
+.featureCard {
+  background: white;
+  border-radius: 16px;
+    padding: 2rem;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(76, 175, 80, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.featureCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(76, 175, 80, 0.15);
+  border-color: rgba(76, 175, 80, 0.3);
+}
+
+[data-theme='dark'] .featureCard {
+  background: var(--ifm-background-surface-color);
+  border-color: rgba(129, 199, 132, 0.2);
+}
+
+[data-theme='dark'] .featureCard:hover {
+  border-color: rgba(129, 199, 132, 0.4);
+  box-shadow: 0 16px 40px rgba(129, 199, 132, 0.1);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.featureTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-heading-color);
+}
+
+.featureDescription {
+  flex: 1;
+  color: var(--ifm-color-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.featureLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.featureLink:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.featureLink:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ========================================
+   QUICK START SECTION
+   ======================================== */
+
+.quickStart {
+  padding: 5rem 0;
+  background: white;
+}
+
+[data-theme='dark'] .quickStart {
+  background: var(--ifm-background-color);
+}
+
+.quickStartGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .quickStartGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quickStartCard {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #F8FFF8 0%, #FFFFFF 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(76, 175, 80, 0.15);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.quickStartCard:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.12);
+  border-color: rgba(76, 175, 80, 0.35);
+  text-decoration: none;
+  color: inherit;
+}
+
+[data-theme='dark'] .quickStartCard {
+  background: linear-gradient(135deg, var(--ifm-background-surface-color) 0%, rgba(129, 199, 132, 0.05) 100%);
+  border-color: rgba(129, 199, 132, 0.15);
+}
+
+[data-theme='dark'] .quickStartCard:hover {
+  border-color: rgba(129, 199, 132, 0.35);
+  box-shadow: 0 8px 24px rgba(129, 199, 132, 0.08);
+}
+
+.quickStartIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  border-radius: 12px;
+}
+
+.quickStartContent {
+  flex: 1;
+}
+
+.quickStartTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem 0;
+  color: var(--ifm-heading-color);
+}
+
+.quickStartDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.quickStartArrow {
+  font-size: 1.5rem;
+  color: var(--ifm-color-primary);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.quickStartCard:hover .quickStartArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ========================================
+   PLATFORM SECTION
+   ======================================== */
+
+.platform {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+}
+
+[data-theme='dark'] .platform {
+  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+}
+
+.platformContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.platformTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] .platformTitle {
+  color: white;
+}
+
+.platformDescription {
+  font-size: 1.15rem;
+  color: var(--ifm-color-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+[data-theme='dark'] .platformDescription {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.platformFeatures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  .platformFeatures {
+    grid-template-columns: 1fr;
+  }
+}
+
+.platformFeature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] .platformFeature {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.checkIcon {
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+[data-theme='dark'] .checkIcon {
+  color: var(--ifm-color-primary-lighter);
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media screen and (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .features,
+  .quickStart,
+  .platform {
+    padding: 3rem 0;
+  }
+
+  .platformTitle {
+    font-size: 1.75rem;
+  }
+
+  .platformDescription {
+    font-size: 1rem;
+  }
 }
